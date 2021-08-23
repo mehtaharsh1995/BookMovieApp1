@@ -102,7 +102,8 @@ const Header = ( props ) => {
 
 
     const  loginClickHandler = () => {
-
+        
+        //console.log(window.btoa(username+":"+password);
         username === "" ? setUserNameRequired("dispBlock") : setUserNameRequired("dispNone" );
         loginPassword === "" ? setLoginPasswordRequired("dispBlock") :setLoginPasswordRequired("dispNone");
         
@@ -116,7 +117,6 @@ const Header = ( props ) => {
                 "Content-Type": "application/json",
                 "Cache-Control": "no-cache",
                 Authorization: "Basic " + window.btoa(username + ":" + loginPassword)
-
             },
             body: dataLogin,
         })
