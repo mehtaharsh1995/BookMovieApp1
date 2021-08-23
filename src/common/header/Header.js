@@ -82,8 +82,7 @@ const Header = ( props ) => {
         setRegisterPassword("");
         setContactRequired("dispNone");
         setContact("");
-        
-    
+        console.log(loginApiError);    
     }
 
 
@@ -124,12 +123,11 @@ const Header = ( props ) => {
             if(response.ok){
                 sessionStorage.setItem("access-token",response.headers.get("access-token"));
                  return response.json();
-        } else{
-            let error = await response.json();
-            setLoginApiError(error.message);
-            throw new Error("Something Went Wrong");
-
-        }
+            }else{
+                let error = await response.json();
+                setLoginApiError(error.message);
+                throw new Error("Something Went Wrong");
+            }
         })
         .then((data) => {
             sessionStorage.setItem("uuid", data.id);
