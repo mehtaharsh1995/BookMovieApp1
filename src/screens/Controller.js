@@ -19,9 +19,7 @@ const Controller = () => {
                  path="/"
                  render = {(props) => <Home {...props} baseUrl = {baseUrl} />}
                  />
-                 <Route
-                 exact
-                 path="/movie/:id"
+                 <Route exact path="/movie/:id" 
                  render = {(props) => <Details {...props} baseUrl = {baseUrl} />}
                  /><Route
                  exact
